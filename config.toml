@@ -1,5 +1,5 @@
 # The URL the site will be built for
-base_url = "https://compfinance-book.netlify.com"
+base_url = "https://cat4dnn.github.io/compfinance-book"
 title = "Handbook of Computational Finance"
 description = "Category-Theoretical & AI-driven Approaches to modern computational finance - combining mathematical rigor with practical applications."
 
@@ -46,7 +46,7 @@ email = "serge.youms56@gmail.com"
 ganalytics = ""  # Google Analytics code
 
 # If running on netlify.app site, set to true
-is_netlify = true
+is_netlify = false
 
 # Set HTML file language
 language_code = "en-US"
