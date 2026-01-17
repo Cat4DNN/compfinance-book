@@ -4,81 +4,117 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-AdiDoks is a Zola theme for building modern documentation websites. It's a port of the Hugo theme Doks for Zola.
+This is **Serge Youmbi's personal academic website** — a Zola-based static site showcasing research at the intersection of Category Theory, Deep Learning, and Computational Finance. Built on a customized AdiDoks theme.
+
+**Sections:**
+- **About** — Academic profile and background
+- **Research** — Research areas and ongoing projects
+- **Publications** — Academic papers and publications
+- **Gallery** — Mathematical formulas and concept visualizations (KaTeX)
+- **Blog** — Technical articles and tutorials
+- **Contact** — Contact information and collaboration opportunities
 
 ## Commands
 
 ```bash
-# Development server (live reload at http://127.0.0.1:1111/)
+# Development server with live reload (http://127.0.0.1:1111/)
 zola serve
 
-# Build for production
+# Build for production (outputs to ./public/)
 zola build
 
-# Check for errors without building
+# Validate content and links without building
 zola check
 ```
 
-**Requirement:** Zola ≥ 0.15.0 must be installed
+**Requirement:** Zola ≥ 0.15.0 (CI uses 0.19.2)
 
 ## Architecture
 
 ### Template Hierarchy
 
-All templates extend `templates/base.html`, which imports macros for modular components:
+All templates extend `templates/base.html`:
 
 ```
 base.html
 ├── index.html (homepage)
-├── page.html → docs/page.html, blog/page.html
-├── section.html → docs/section.html, blog/section.html
-└── authors/list.html, authors/single.html
+├── page.html
+├── section.html
+├── taxonomy_list.html, taxonomy_single.html (tags)
+├── about/section.html
+├── research/section.html
+├── publications/section.html
+├── gallery/section.html
+├── blog/section.html, blog/page.html
+└── contact/section.html
 ```
 
-**Macros** (`templates/macros/`) provide reusable components:
-- `head.html` - SEO, meta tags, Open Graph, JSON-LD
-- `header.html` - Navigation with active section highlighting
-- `docs-sidebar.html`, `docs-toc.html`, `docs-navigation.html` - Documentation layout
-- `math.html` - KaTeX/MathJax integration
+**Macros** (`templates/macros/`):
+- `head.html` — SEO, Open Graph, JSON-LD
+- `header.html` — Navigation with active section highlighting
+- `math.html` — KaTeX integration (enabled globally)
 
 ### Content Structure
 
-Content uses TOML frontmatter (`+++` delimited) with `extra` for custom fields:
+Content uses TOML frontmatter (`+++` delimited):
 
-- `content/_index.md` - Homepage with `[[extra.menu.main]]` and `[[extra.list]]` items
-- `content/docs/` - Documentation (nested sections with `_index.md` per folder)
-- `content/blog/` - Blog posts with author taxonomy
-- `content/authors/` - Author profiles
+```markdown
++++
+title = "Post Title"
+description = "Short description"
+date = 2025-01-15T09:00:00+00:00
+template = "blog/page.html"
+
+[taxonomies]
+tags = ["category-theory", "deep-learning"]
+
+[extra]
+lead = "Lead paragraph shown below title"
+math = true
++++
+
+Content with $\LaTeX$ math support...
+```
 
 ### Styling
 
-Sass files compile automatically from `sass/`:
+Sass compiles from `sass/`:
 
 ```
 main.scss
 ├── bootstrap/scss/ (Bootstrap framework)
-├── common/ (variables, fonts, global, dark mode)
-├── components/ (code, alerts, buttons, search, etc.)
-├── layouts/ (header, footer, pages, posts, sidebar)
-└── _custom.scss (user customizations - empty by default)
+├── common/ (_variables.scss, _fonts.scss, _global.scss, _dark.scss)
+├── components/ (_code.scss, _alerts.scss, _fintech.scss, _search.scss)
+├── layouts/ (_header.scss, _footer.scss, _pages.scss, _sidebar.scss)
+└── _custom.scss (site-specific customizations)
 ```
 
-**Dark mode:** Toggle handled via `sass/common/_dark.scss`
+**Key custom styles** in `_custom.scss`:
+- `.gradient-text` — Animated gradient text for hero sections
+- `.about-page`, `.research-page`, `.publications-page`, `.contact-page` — Section-specific styling
+- Dark mode support throughout
 
-### JavaScript
+### Configuration (`config.toml`)
 
-- `static/index.js` - Search functionality using FlexSearch library
-- Search index built automatically when `build_search_index = true` in config
+- `math = true` with `library = "katex"` — KaTeX enabled globally
+- `build_search_index = true` — FlexSearch-based search
+- `taxonomies = [{name = "tags"}]` — Blog post tagging
+- Theme color: `#6366f1` (indigo primary)
 
-## Configuration
+### Deployment
 
-`config.toml` key settings:
-- `build_search_index` - Enable/disable search
-- `compile_sass` - Auto-compile Sass files
-- `[extra]` section - Theme customization (SEO, math, menus, footer)
-- `[languages.fi]` - Multi-language support example
+GitHub Pages via `.github/workflows/deploy.yml`:
+- Triggers on push to `main`
+- Uses Zola 0.19.2
+- Deploys to GitHub Pages
+
+## Content Guidelines
+
+- **Blog posts**: Use `[taxonomies] tags = [...]` for categorization
+- **Math content**: Use KaTeX syntax — inline `$...$`, block `$$...$$`
+- **Research/Publications**: Update content in respective `_index.md` files
 
 ## Conventions
 
-- Follow [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) for commit messages
-- Follow [GitHub flow](https://guides.github.com/introduction/flow/) for contributions
+- Follow [Conventional Commits](https://www.conventionalcommits.org/) for commit messages
+- Math-heavy content should set `[extra] math = true` in frontmatter

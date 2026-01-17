@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+
+{% block body %}
+  {% set page_class = "taxonomy-single" %}
+{% endblock body %}
+
+{% block header %}
+  {{ macros_header::header(current_section="blog")}}
+{% endblock header %}
+
+{% block content %}
+<div class="wrap container" role="document">
+  <div class="content">
+    <div class="row justify-content-center">
+      <div class="col-md-12 col-lg-10 col-xxl-8">
+        <article class="taxonomy-page">
+          <div class="page-header text-center mb-5">
+            <span class="badge bg-primary mb-3">{{ taxonomy.name | title }}</span>
+            <h1 class="display-4">{{ term.name | title }}</h1>
+            <p class="lead text-muted">{{ term.pages | length }} posts</p>
+          </div>
+
+          <div class="post-list">
+            {% for page in term.pages %}
+            <article class="post-item">
+              <h2><a href="{{ page.permalink }}">{{ page.title }}</a></h2>
+              <div class="post-meta mb-2">
+                <time datetime="{{ page.date | date(format="%Y-%m-%d") }}">
+                  {{ page.date | date(format="%B %d, %Y") }}
+                </time>
+              </div>
+              {% if page.description %}
+              <p class="text-muted">{{ page.description }}</p>
+              {% endif %}
+            </article>
+            {% endfor %}
+          </div>
+
+          <div class="text-center mt-5">
+            <a href="{{ config.base_url }}/{{ taxonomy.name }}/" class="btn btn-outline-primary">
+              View All {{ taxonomy.name | title }}
+            </a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.post-item {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.post-item:last-child {
+  border-bottom: none;
+}
+
+.post-item h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.post-item h2 a {
+  color: #0a0e27;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.post-item h2 a:hover {
+  color: #00d9ff;
+}
+
+.post-meta {
+  font-size: 0.875rem;
+  color: #6c757d;
+}
+
+body.dark .post-item {
+  border-color: #1a2340;
+}
+
+body.dark .post-item h2 a {
+  color: white;
+}
+
+body.dark .post-item h2 a:hover {
+  color: #00d9ff;
+}
+</style>
+{% endblock content %}

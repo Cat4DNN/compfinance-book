@@ -1,0 +1,28 @@
+{% extends "section.html" %}
+
+{% block header %}
+  {% set current_section = "publications" %}
+  {{ macros_header::header(current_section=current_section)}}
+{% endblock header %}
+
+{% block content %}
+<div class="wrap container" role="document">
+  <div class="content">
+    <div class="row justify-content-center">
+      <div class="col-md-12 col-lg-10 col-xxl-9">
+        <article class="publications-page">
+          <div class="page-header text-center mb-5">
+            <h1 class="display-4">{{ section.title }}</h1>
+            {% if section.extra.lead %}
+              <p class="lead text-muted">{{ section.extra.lead }}</p>
+            {% endif %}
+          </div>
+          <div class="publications-content">
+            {{ section.content | safe }}
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}
