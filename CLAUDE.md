@@ -4,81 +4,103 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-AdiDoks is a Zola theme for building modern documentation websites. It's a port of the Hugo theme Doks for Zola.
+**Handbook of Computational Finance** - A Zola static site for a finance book combining category theory with AI-driven approaches to quantitative finance. Built on the AdiDoks theme.
+
+- **URL**: https://cat4dnn.github.io/compfinance-book
+- **Author**: Serge Youmbi
 
 ## Commands
 
 ```bash
-# Development server (live reload at http://127.0.0.1:1111/)
+# Development server with live reload (http://127.0.0.1:1111/)
 zola serve
 
-# Build for production
+# Build for production (outputs to ./public/)
 zola build
 
-# Check for errors without building
+# Validate content and links without building
 zola check
 ```
 
-**Requirement:** Zola ≥ 0.15.0 must be installed
+**Requirement**: Zola ≥ 0.15.0 (CI uses 0.19.2)
 
 ## Architecture
 
-### Template Hierarchy
-
-All templates extend `templates/base.html`, which imports macros for modular components:
-
-```
-base.html
-├── index.html (homepage)
-├── page.html → docs/page.html, blog/page.html
-├── section.html → docs/section.html, blog/section.html
-└── authors/list.html, authors/single.html
-```
-
-**Macros** (`templates/macros/`) provide reusable components:
-- `head.html` - SEO, meta tags, Open Graph, JSON-LD
-- `header.html` - Navigation with active section highlighting
-- `docs-sidebar.html`, `docs-toc.html`, `docs-navigation.html` - Documentation layout
-- `math.html` - KaTeX/MathJax integration
-
 ### Content Structure
 
-Content uses TOML frontmatter (`+++` delimited) with `extra` for custom fields:
+This project uses `chapters/` as the main documentation section (not `docs/`):
 
-- `content/_index.md` - Homepage with `[[extra.menu.main]]` and `[[extra.list]]` items
-- `content/docs/` - Documentation (nested sections with `_index.md` per folder)
-- `content/blog/` - Blog posts with author taxonomy
-- `content/authors/` - Author profiles
+```
+content/
+├── _index.md           # Homepage with navigation menu and feature cards
+├── chapters/           # Main book content (primary section)
+│   ├── _index.md       # Chapter listing
+│   ├── part-1/         # Mathematical foundations
+│   └── part-2/         # Trading strategies
+├── videos/             # Video tutorials
+├── gallery/            # Visual content
+├── author/             # Author profile
+├── resources/          # External resources
+└── blog/               # Blog posts
+```
+
+### Chapter Page Frontmatter
+
+```markdown
++++
+title = "Chapter Title"
+description = "Brief description"
+date = 2024-01-01T08:00:00+00:00
+weight = 10                          # Controls ordering
+template = "chapters/page.html"      # Must use chapters template
+
+[extra]
+lead = "Introduction paragraph"
+toc = true                           # Enable table of contents
++++
+```
+
+### Template Hierarchy
+
+```
+templates/base.html                  # Root template
+├── index.html                       # Homepage
+├── chapters/page.html              # Individual chapter pages
+├── chapters/section.html           # Chapter listing
+├── videos/page.html, section.html  # Video content
+├── gallery/section.html            # Image gallery
+└── macros/                         # Reusable components
+    ├── docs-sidebar.html           # Chapter navigation sidebar
+    ├── math.html                   # KaTeX integration
+    └── head.html                   # SEO, Open Graph, JSON-LD
+```
+
+### Key Configuration
+
+Math is enabled globally (`config.toml`):
+```toml
+math = true
+library = "katex"
+```
+
+Use LaTeX notation directly in markdown:
+- Inline: `$\mathcal{C}$`
+- Display: `$$F: \mathcal{C} \to \mathcal{D}$$`
 
 ### Styling
 
-Sass files compile automatically from `sass/`:
+Edit `sass/_custom.scss` for project customizations. Bootstrap is included via `sass/bootstrap/`.
 
-```
-main.scss
-├── bootstrap/scss/ (Bootstrap framework)
-├── common/ (variables, fonts, global, dark mode)
-├── components/ (code, alerts, buttons, search, etc.)
-├── layouts/ (header, footer, pages, posts, sidebar)
-└── _custom.scss (user customizations - empty by default)
-```
+## Deployment
 
-**Dark mode:** Toggle handled via `sass/common/_dark.scss`
-
-### JavaScript
-
-- `static/index.js` - Search functionality using FlexSearch library
-- Search index built automatically when `build_search_index = true` in config
-
-## Configuration
-
-`config.toml` key settings:
-- `build_search_index` - Enable/disable search
-- `compile_sass` - Auto-compile Sass files
-- `[extra]` section - Theme customization (SEO, math, menus, footer)
-- `[languages.fi]` - Multi-language support example
+GitHub Pages via `.github/workflows/deploy.yml`:
+- Triggers on push to `main` or manual dispatch
+- Builds with Zola 0.19.2
+- Deploys to `public/`
 
 ## Conventions
 
-- Follow [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) for commit messages
-- Follow [GitHub flow](https://guides.github.com/introduction/flow/) for contributions
+- Follow [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
+- Chapter files use `weight` for ordering (lower = earlier)
+- Code examples should include Python, Haskell, or Julia implementations
+- Mathematical content uses KaTeX notation
