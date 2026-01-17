@@ -1,87 +1,106 @@
 +++
 title = "Gallery"
-description = "Mathematical visualizations and formulas from the Handbook of Computational Finance."
+description = "Mathematical visualizations, research diagrams, and key formulas from my work in Category Theory, Deep Learning, and Computational Finance."
 template = "gallery/section.html"
 
 [extra]
-categories = ["Category Theory", "Stochastic Calculus", "Machine Learning", "Risk"]
+lead = "Visual representations of key concepts from my research."
+categories = ["Category Theory", "Multi-Agent AI", "Deep Learning", "Finance"]
 
 [[extra.gallery_items]]
 title = "Functor Definition"
-description = "A functor F maps objects and morphisms between categories"
+description = "A functor F maps objects and morphisms between categories - the foundation of categorical deep learning"
 katex = "F: \\mathcal{C} \\to \\mathcal{D}"
 category = "Category Theory"
 
 [[extra.gallery_items]]
 title = "Natural Transformation"
-description = "A natural transformation between functors F and G"
+description = "Natural transformations relate functors, capturing parameter sharing in neural architectures"
 katex = "\\eta: F \\Rightarrow G"
 category = "Category Theory"
 
 [[extra.gallery_items]]
 title = "Monad Structure"
-description = "The monad triple with unit and multiplication"
-katex = "(T, \\eta, \\mu)"
+description = "Monads encode computational effects - essential for functional AI systems"
+katex = "(T, \\eta, \\mu) \\text{ where } \\mu: T^2 \\Rightarrow T"
 category = "Category Theory"
 
 [[extra.gallery_items]]
-title = "Black-Scholes PDE"
-description = "The fundamental equation for option pricing"
-katex = "\\frac{\\partial V}{\\partial t} + \\frac{1}{2}\\sigma^2 S^2 \\frac{\\partial^2 V}{\\partial S^2} + rS\\frac{\\partial V}{\\partial S} - rV = 0"
-category = "Stochastic Calculus"
+title = "Bigraph Composition"
+description = "Composition in Milner's Bigraphs, a foundation for Trigraphs"
+katex = "G \\circ F: A \\to C"
+category = "Category Theory"
 
 [[extra.gallery_items]]
-title = "Itô's Lemma"
-description = "The chain rule for stochastic calculus"
-katex = "df = \\frac{\\partial f}{\\partial t}dt + \\frac{\\partial f}{\\partial X}dX + \\frac{1}{2}\\frac{\\partial^2 f}{\\partial X^2}(dX)^2"
-category = "Stochastic Calculus"
+title = "Agent Consensus"
+description = "Multi-agent weighted voting for portfolio decisions"
+katex = "\\pi^* = \\sum_{i=1}^{n} w_i \\cdot \\pi_i \\text{ s.t. } \\sum w_i = 1"
+category = "Multi-Agent AI"
 
 [[extra.gallery_items]]
-title = "Geometric Brownian Motion"
-description = "The standard model for stock price dynamics"
-katex = "dS_t = \\mu S_t dt + \\sigma S_t dW_t"
-category = "Stochastic Calculus"
+title = "Sharpe Ratio"
+description = "Risk-adjusted performance metric optimised by our multi-agent system"
+katex = "S = \\frac{\\mathbb{E}[R_p - R_f]}{\\sigma_p}"
+category = "Multi-Agent AI"
 
 [[extra.gallery_items]]
-title = "Neural Network Layer"
-description = "Forward pass through a neural network layer"
-katex = "h^{(l)} = \\sigma(W^{(l)} h^{(l-1)} + b^{(l)})"
-category = "Machine Learning"
+title = "Algebraic Effect"
+description = "Effect signature in Kyo's algebraic effect system"
+katex = "\\text{op}: A \\to B < E"
+category = "Multi-Agent AI"
+
+[[extra.gallery_items]]
+title = "Continuation Type"
+description = "Delimited continuation for control flow in financial systems"
+katex = "\\kappa: (A \\to R) \\to R"
+category = "Multi-Agent AI"
 
 [[extra.gallery_items]]
 title = "Attention Mechanism"
-description = "Scaled dot-product attention in transformers"
+description = "Scaled dot-product attention, the heart of transformer architectures"
 katex = "\\text{Attention}(Q,K,V) = \\text{softmax}\\left(\\frac{QK^T}{\\sqrt{d_k}}\\right)V"
-category = "Machine Learning"
+category = "Deep Learning"
 
 [[extra.gallery_items]]
-title = "Loss Function"
-description = "Cross-entropy loss for classification"
-katex = "\\mathcal{L} = -\\sum_{i} y_i \\log(\\hat{y}_i)"
-category = "Machine Learning"
+title = "Neural SDE"
+description = "Neural stochastic differential equation for financial modelling"
+katex = "dX_t = f_\\theta(X_t, t)dt + g_\\phi(X_t, t)dW_t"
+category = "Deep Learning"
 
 [[extra.gallery_items]]
-title = "Value at Risk"
-description = "The VaR at confidence level α"
-katex = "\\text{VaR}_\\alpha = -\\inf\\{x : P(X \\leq x) \\geq \\alpha\\}"
-category = "Risk"
+title = "Backpropagation"
+description = "Gradient computation - viewing backprop as a functor"
+katex = "\\frac{\\partial \\mathcal{L}}{\\partial w} = \\frac{\\partial \\mathcal{L}}{\\partial y} \\cdot \\frac{\\partial y}{\\partial w}"
+category = "Deep Learning"
+
+[[extra.gallery_items]]
+title = "Black-Scholes PDE"
+description = "The fundamental equation for European option pricing"
+katex = "\\frac{\\partial V}{\\partial t} + \\frac{1}{2}\\sigma^2 S^2 \\frac{\\partial^2 V}{\\partial S^2} + rS\\frac{\\partial V}{\\partial S} - rV = 0"
+category = "Finance"
+
+[[extra.gallery_items]]
+title = "Risk-Neutral Pricing"
+description = "Derivative pricing under the risk-neutral measure"
+katex = "V_0 = e^{-rT}\\mathbb{E}^{\\mathbb{Q}}[\\text{Payoff}]"
+category = "Finance"
+
+[[extra.gallery_items]]
+title = "Portfolio Optimisation"
+description = "Mean-variance optimisation objective"
+katex = "\\max_w \\left\\{ w^T \\mu - \\frac{\\lambda}{2} w^T \\Sigma w \\right\\}"
+category = "Finance"
 
 [[extra.gallery_items]]
 title = "Expected Shortfall"
-description = "Conditional expectation beyond VaR"
-katex = "\\text{ES}_\\alpha = \\mathbb{E}[X | X \\leq \\text{VaR}_\\alpha]"
-category = "Risk"
-
-[[extra.gallery_items]]
-title = "Portfolio Variance"
-description = "Risk of a portfolio with weight vector w"
-katex = "\\sigma_p^2 = w^T \\Sigma w"
-category = "Risk"
+description = "Coherent risk measure used in our multi-agent system"
+katex = "\\text{ES}_\\alpha = -\\frac{1}{\\alpha}\\int_0^\\alpha \\text{VaR}_u \\, du"
+category = "Finance"
 
 +++
 
-Explore mathematical formulas and concepts from the handbook. These expressions illustrate key ideas in categorical computational finance.
+Explore the mathematical foundations underlying my research. These formulas and concepts bridge category theory, AI systems, and computational finance.
 
 <div class="alert alert-info mt-4">
-<strong>Note:</strong> All formulas are rendered using KaTeX. Hover over cards to see the interactive effects.
+<strong>Interactive Gallery:</strong> All formulas are rendered using KaTeX. These represent key concepts from my publications and ongoing research.
 </div>

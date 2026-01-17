@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block body %}
+  {% set page_class = "taxonomy-list" %}
+{% endblock body %}
+
+{% block header %}
+  {{ macros_header::header(current_section="blog")}}
+{% endblock header %}
+
+{% block content %}
+<div class="wrap container" role="document">
+  <div class="content">
+    <div class="row justify-content-center">
+      <div class="col-md-12 col-lg-10 col-xxl-8">
+        <article class="taxonomy-page">
+          <div class="page-header text-center mb-5">
+            <h1 class="display-4">{{ taxonomy.name | title }}</h1>
+            <p class="lead text-muted">Browse all {{ terms | length }} {{ taxonomy.name }}</p>
+          </div>
+
+          <div class="taxonomy-list">
+            <div class="row g-3">
+              {% for term in terms %}
+              <div class="col-md-6 col-lg-4">
+                <a href="{{ term.permalink }}" class="taxonomy-card">
+                  <div class="taxonomy-card-inner">
+                    <h4>{{ term.name }}</h4>
+                    <span class="badge bg-primary">{{ term.pages | length }} posts</span>
+                  </div>
+                </a>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.taxonomy-card {
+  display: block;
+  padding: 1.5rem;
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.taxonomy-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  border-color: #00d9ff;
+}
+
+.taxonomy-card h4 {
+  color: #0a0e27;
+  margin-bottom: 0.5rem;
+  text-transform: capitalize;
+}
+
+body.dark .taxonomy-card {
+  background: #131a2e;
+  border-color: #1a2340;
+}
+
+body.dark .taxonomy-card h4 {
+  color: white;
+}
+</style>
+{% endblock content %}

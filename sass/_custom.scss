@@ -1,3 +1,663 @@
-// Custom styles for Handbook of Computational Finance
+// Custom styles for Serge Youmbi's Personal Academic Website
 // Import fintech-specific styling
 @import "components/fintech";
+
+// ============================================
+// Personal Branding Styles
+// ============================================
+
+// Gradient text effect for homepage hero
+.gradient-text {
+  background: linear-gradient(135deg, $fintech-blue 0%, $fintech-purple 50%, $fintech-green 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+}
+
+// ============================================
+// Enhanced Homepage Hero
+// ============================================
+
+.home {
+  .hero {
+    h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+
+      @include media-breakpoint-down(md) {
+        font-size: 2.5rem;
+      }
+    }
+
+    .lead {
+      font-size: 1.25rem;
+      line-height: 1.8;
+      color: $gray-700;
+
+      em {
+        color: $fintech-blue;
+        font-style: normal;
+        font-weight: 600;
+      }
+    }
+  }
+
+  // Subtle animated background
+  .section-hero {
+    background:
+      radial-gradient(circle at 10% 20%, rgba($fintech-blue, 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 90% 80%, rgba($fintech-purple, 0.06) 0%, transparent 50%);
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+  }
+}
+
+// ============================================
+// Feature Cards (Homepage)
+// ============================================
+
+.doks-list {
+  .doks-item {
+    background: white;
+    border: 1px solid $gray-200;
+    border-radius: 16px;
+    padding: 2rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    height: 100%;
+
+    &:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      border-color: rgba($fintech-blue, 0.3);
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: $fintech-navy;
+
+      &::before {
+        content: '';
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        background: $fintech-blue;
+        border-radius: 50%;
+        margin-right: 12px;
+        vertical-align: middle;
+      }
+    }
+
+    p {
+      color: $gray-600;
+      line-height: 1.7;
+    }
+  }
+}
+
+// ============================================
+// About Page Styling
+// ============================================
+
+.about-page {
+  .page-header {
+    margin-bottom: 3rem;
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, $fintech-navy 0%, $fintech-blue 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+  }
+
+  blockquote {
+    border-left: 4px solid $fintech-blue;
+    padding: 1.5rem 2rem;
+    margin: 2rem 0;
+    background: rgba($fintech-blue, 0.03);
+    border-radius: 0 12px 12px 0;
+
+    p {
+      font-style: italic;
+      font-size: 1.1rem;
+      color: $gray-700;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  h3 {
+    color: $fintech-navy;
+    font-weight: 700;
+    margin-top: 2rem;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 40px;
+      height: 3px;
+      background: $fintech-blue;
+      margin-top: 8px;
+      border-radius: 2px;
+    }
+  }
+
+  ul li {
+    margin-bottom: 0.75rem;
+
+    strong {
+      color: $fintech-navy;
+    }
+  }
+}
+
+// ============================================
+// Research Page Styling
+// ============================================
+
+.research-page {
+  .page-header {
+    margin-bottom: 3rem;
+
+    h1.display-4 {
+      font-weight: 800;
+      background: linear-gradient(135deg, $fintech-navy 0%, $fintech-blue 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+  }
+
+  h2, h3 {
+    color: $fintech-navy;
+    font-weight: 700;
+  }
+
+  h3 {
+    font-size: 1.35rem;
+    margin-top: 2rem;
+    padding-left: 1rem;
+    border-left: 3px solid $fintech-blue;
+  }
+
+  // Code blocks in research
+  pre {
+    background: $fintech-navy;
+    border: none;
+    border-radius: 12px;
+    margin: 1.5rem 0;
+
+    code {
+      color: $fintech-blue;
+    }
+  }
+
+  // Math displays
+  .katex-display {
+    padding: 1.5rem;
+    background: rgba($fintech-navy, 0.03);
+    border-radius: 12px;
+    margin: 1.5rem 0;
+
+    .katex {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+// ============================================
+// Publications Page Styling
+// ============================================
+
+.publications-page {
+  .page-header {
+    margin-bottom: 3rem;
+
+    h1.display-4 {
+      font-weight: 800;
+      background: linear-gradient(135deg, $fintech-navy 0%, $fintech-blue 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+  }
+
+  h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: $fintech-navy;
+    margin-top: 3rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid $gray-200;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: $fintech-navy;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  // Publication metadata
+  .publication-meta {
+    margin: 1rem 0 1.5rem;
+
+    .badge {
+      margin-right: 0.5rem;
+      margin-bottom: 0.5rem;
+      font-size: 0.8rem;
+      padding: 0.5em 1em;
+    }
+  }
+
+  // Key contributions list
+  strong + ul {
+    margin-top: 1rem;
+
+    li {
+      position: relative;
+      padding-left: 1.5rem;
+      margin-bottom: 0.5rem;
+
+      &::before {
+        content: '→';
+        position: absolute;
+        left: 0;
+        color: $fintech-blue;
+        font-weight: bold;
+      }
+    }
+  }
+
+  hr {
+    margin: 3rem 0;
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, $gray-300, transparent);
+  }
+
+  // Tables
+  table {
+    width: 100%;
+    margin: 2rem 0;
+    border-collapse: separate;
+    border-spacing: 0;
+
+    th {
+      background: $fintech-navy;
+      color: white;
+      font-weight: 600;
+      padding: 1rem;
+      text-align: left;
+
+      &:first-child {
+        border-radius: 8px 0 0 0;
+      }
+
+      &:last-child {
+        border-radius: 0 8px 0 0;
+      }
+    }
+
+    td {
+      padding: 1rem;
+      border-bottom: 1px solid $gray-200;
+    }
+
+    tbody tr:hover {
+      background: rgba($fintech-blue, 0.03);
+    }
+  }
+}
+
+// ============================================
+// Contact Page Styling
+// ============================================
+
+.contact-page {
+  .page-header {
+    margin-bottom: 3rem;
+
+    h1.display-4 {
+      font-weight: 800;
+      background: linear-gradient(135deg, $fintech-navy 0%, $fintech-blue 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+  }
+
+  h2 {
+    color: $fintech-navy;
+    font-weight: 700;
+    font-size: 1.75rem;
+    margin-top: 2.5rem;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 50px;
+      height: 3px;
+      background: $fintech-blue;
+      margin-top: 10px;
+      border-radius: 2px;
+    }
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    color: $fintech-navy;
+    margin-top: 1.5rem;
+  }
+
+  // Email highlight
+  p strong:first-child {
+    color: $fintech-blue;
+    font-size: 1.1rem;
+  }
+
+  // Social links
+  ul li a {
+    color: $fintech-navy;
+    transition: all 0.2s ease;
+
+    &:hover {
+      color: $fintech-blue;
+      padding-left: 8px;
+    }
+  }
+}
+
+// ============================================
+// Gallery Page Enhancements
+// ============================================
+
+.gallery-section {
+  .page-header {
+    h1 {
+      font-weight: 800;
+      background: linear-gradient(135deg, $fintech-navy 0%, $fintech-blue 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+  }
+
+  .gallery-filter {
+    border-radius: 20px;
+    padding: 0.5rem 1.25rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+
+    &.active, &:hover {
+      transform: translateY(-2px);
+    }
+  }
+}
+
+// ============================================
+// Blog Enhancements
+// ============================================
+
+.blog {
+  article {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid $gray-200;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    h2 a {
+      color: $fintech-navy;
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: $fintech-blue;
+      }
+    }
+  }
+}
+
+// ============================================
+// CTA Buttons
+// ============================================
+
+.cta-buttons {
+  margin-top: 3rem;
+
+  .btn {
+    padding: 0.875rem 2rem;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, $fintech-blue 0%, lighten($fintech-blue, 10%) 100%);
+    border: none;
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba($fintech-blue, 0.4);
+    }
+  }
+
+  .btn-outline-primary {
+    border: 2px solid $fintech-blue;
+
+    &:hover {
+      transform: translateY(-3px);
+      background: $fintech-blue;
+      box-shadow: 0 10px 30px rgba($fintech-blue, 0.3);
+    }
+  }
+}
+
+// ============================================
+// Navigation Enhancements
+// ============================================
+
+.navbar {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.95) !important;
+
+  .navbar-brand {
+    font-weight: 800;
+    font-size: 1.35rem;
+    color: $fintech-navy !important;
+    letter-spacing: -0.02em;
+  }
+
+  .nav-link {
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 2px;
+      background: $fintech-blue;
+      transition: width 0.3s ease;
+    }
+
+    &:hover::after,
+    &.active::after {
+      width: 80%;
+    }
+  }
+}
+
+// ============================================
+// Footer Enhancements
+// ============================================
+
+footer {
+  background: $fintech-navy;
+
+  .footer-info {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  a {
+    color: rgba(255, 255, 255, 0.8);
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: $fintech-blue;
+    }
+  }
+}
+
+// ============================================
+// Dark Mode Additions
+// ============================================
+
+body.dark {
+  .gradient-text {
+    background: linear-gradient(135deg, $fintech-blue 0%, $fintech-green 50%, $fintech-purple 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .home .hero .lead {
+    color: $gray-400;
+
+    em {
+      color: $fintech-blue;
+    }
+  }
+
+  .doks-list .doks-item {
+    background: $fintech-card;
+    border-color: lighten($fintech-navy, 10%);
+
+    &:hover {
+      border-color: $fintech-blue;
+      box-shadow: 0 20px 40px rgba($fintech-blue, 0.2);
+    }
+
+    h3 {
+      color: white;
+    }
+
+    p {
+      color: $gray-400;
+    }
+  }
+
+  .about-page,
+  .research-page,
+  .publications-page,
+  .contact-page {
+    .page-header h1,
+    .page-header h1.display-4 {
+      background: linear-gradient(135deg, $fintech-blue 0%, $fintech-green 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    h2, h3 {
+      color: white;
+    }
+
+    blockquote {
+      background: rgba($fintech-blue, 0.08);
+      border-left-color: $fintech-blue;
+
+      p {
+        color: $gray-300;
+      }
+    }
+  }
+
+  .publications-page {
+    table {
+      th {
+        background: lighten($fintech-navy, 8%);
+      }
+
+      td {
+        border-color: lighten($fintech-navy, 10%);
+      }
+
+      tbody tr:hover {
+        background: rgba($fintech-blue, 0.08);
+      }
+    }
+
+    hr {
+      background: linear-gradient(90deg, transparent, lighten($fintech-navy, 15%), transparent);
+    }
+  }
+
+  .navbar {
+    background: rgba($fintech-navy, 0.95) !important;
+
+    .navbar-brand {
+      color: white !important;
+    }
+  }
+
+  .blog article {
+    border-color: lighten($fintech-navy, 10%);
+
+    h2 a {
+      color: white;
+
+      &:hover {
+        color: $fintech-blue;
+      }
+    }
+  }
+}
+
+// ============================================
+// Smooth Scroll Behavior
+// ============================================
+
+html {
+  scroll-behavior: smooth;
+}
+
+// ============================================
+// Selection Color
+// ============================================
+
+::selection {
+  background: rgba($fintech-blue, 0.3);
+  color: inherit;
+}
+
+// ============================================
+// Print Styles
+// ============================================
+
+@media print {
+  .navbar,
+  footer,
+  .cta-buttons {
+    display: none !important;
+  }
+
+  .gradient-text {
+    -webkit-text-fill-color: $fintech-navy;
+    color: $fintech-navy;
+  }
+}
