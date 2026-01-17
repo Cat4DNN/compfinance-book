@@ -8,7 +8,7 @@ url = "/about/"
 url_button = "Learn More About Me"
 repo_version = "University of Derby"
 repo_license = "PhD Candidate"
-repo_url = "https://github.com/sergeyoumbi"
+repo_url = "https://www.derby.ac.uk/"
 author = "Serge Youmbi"
 
 # Menu items

@@ -75,5 +75,5 @@ To help me respond more effectively, please include:
 
 <div class="text-center mt-5">
   <a href="mailto:serge.youmbi@derby.ac.uk" class="btn btn-primary btn-lg">Send Email</a>
-  <a href="https://linkedin.com/in/sergeyoumbi" class="btn btn-outline-primary btn-lg ms-3" target="_blank">Connect on LinkedIn</a>
+  <a href="https://linkedin.com/in/Cat4DNN" class="btn btn-outline-primary btn-lg ms-3" target="_blank">Connect on LinkedIn</a>
 </div>

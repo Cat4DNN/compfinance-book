@@ -120,7 +120,7 @@ Algebraic effects represent a fundamental shift in how we think about programmin
 
 ---
 
-*Want to learn more? Check out my [research](/research/) on algebraic effects in financial systems, or [reach out](/contact/) directly.*
+*Want to learn more? Check out my [research](https://cat4dnn.github.io/sergeyoumbi/research/) on algebraic effects in financial systems, or [reach out](https://cat4dnn.github.io/sergeyoumbi/contact/) directly.*
 
 ---
 

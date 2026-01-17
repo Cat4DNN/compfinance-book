@@ -71,6 +71,6 @@ When I'm not diving into mathematical abstractions or training neural networks, 
 I'm always excited to discuss research collaborations, speaking opportunities, or simply chat about the beauty of mathematics and its applications. Feel free to reach out!
 
 <div class="cta-buttons text-center mt-5">
-  <a href="/contact/" class="btn btn-primary btn-lg">Get in Touch</a>
-  <a href="/publications/" class="btn btn-outline-primary btn-lg ms-3">View Publications</a>
+  <a href="https://cat4dnn.github.io/sergeyoumbi/contact/" class="btn btn-primary btn-lg">Get in Touch</a>
+  <a href="https://cat4dnn.github.io/sergeyoumbi/publications/" class="btn btn-outline-primary btn-lg ms-3">View Publications</a>
 </div>

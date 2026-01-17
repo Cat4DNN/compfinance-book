@@ -81,7 +81,7 @@ The key insight is that **collective intelligence** often outperforms individual
 
 ---
 
-*Interested in the technical details? Check out my [publications](/publications/) or [get in touch](/contact/).*
+*Interested in the technical details? Check out my [publications](https://cat4dnn.github.io/sergeyoumbi/publications/) or [get in touch](https://cat4dnn.github.io/sergeyoumbi/contact/).*
 
 ---
 

@@ -74,7 +74,7 @@ Category theory isn't just abstract nonsense — it's a powerful tool for unders
 
 ---
 
-*Have questions? Reach out on [Twitter](https://twitter.com/CatDNN) or [contact me](/contact/) directly.*
+*Have questions? Reach out on [Twitter](https://twitter.com/CatDNN) or [contact me](https://cat4dnn.github.io/sergeyoumbi/contact/) directly.*
 
 ---
 

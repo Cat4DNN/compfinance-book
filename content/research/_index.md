@@ -107,5 +107,5 @@ My research aims to:
 
 <div class="text-center mt-5">
   <a href="https://derby.academia.edu/SergeYoumbi" class="btn btn-primary btn-lg" target="_blank">View Publications</a>
-  <a href="/contact/" class="btn btn-outline-primary btn-lg ms-3">Collaborate With Me</a>
+  <a href="https://cat4dnn.github.io/sergeyoumbi/contact/" class="btn btn-outline-primary btn-lg ms-3">Collaborate With Me</a>
 </div>
