@@ -1,77 +1,87 @@
 +++
 title = "Gallery"
-description = "Visualizations, diagrams, and figures from the Handbook of Computational Finance."
+description = "Mathematical visualizations and formulas from the Handbook of Computational Finance."
 template = "gallery/section.html"
 
 [extra]
-categories = ["Diagrams", "Charts", "Code", "Architecture"]
+categories = ["Category Theory", "Stochastic Calculus", "Machine Learning", "Risk"]
 
 [[extra.gallery_items]]
-title = "Category Theory Overview"
-description = "The fundamental structures of category theory applied to finance"
-full = "/images/gallery/category-theory-overview.png"
-thumb = "/images/gallery/thumbs/category-theory-overview.png"
-category = "Diagrams"
+title = "Functor Definition"
+description = "A functor F maps objects and morphisms between categories"
+katex = "F: \\mathcal{C} \\to \\mathcal{D}"
+category = "Category Theory"
 
 [[extra.gallery_items]]
-title = "Functor Composition"
-description = "How functors compose to build complex financial models"
-full = "/images/gallery/functor-composition.png"
-thumb = "/images/gallery/thumbs/functor-composition.png"
-category = "Diagrams"
+title = "Natural Transformation"
+description = "A natural transformation between functors F and G"
+katex = "\\eta: F \\Rightarrow G"
+category = "Category Theory"
 
 [[extra.gallery_items]]
-title = "Option Pricing Surface"
-description = "3D visualization of Black-Scholes implied volatility surface"
-full = "/images/gallery/vol-surface.png"
-thumb = "/images/gallery/thumbs/vol-surface.png"
-category = "Charts"
+title = "Monad Structure"
+description = "The monad triple with unit and multiplication"
+katex = "(T, \\eta, \\mu)"
+category = "Category Theory"
 
 [[extra.gallery_items]]
-title = "Neural Network Architecture"
-description = "Deep learning architecture for trading signal generation"
-full = "/images/gallery/neural-arch.png"
-thumb = "/images/gallery/thumbs/neural-arch.png"
-category = "Architecture"
+title = "Black-Scholes PDE"
+description = "The fundamental equation for option pricing"
+katex = "\\frac{\\partial V}{\\partial t} + \\frac{1}{2}\\sigma^2 S^2 \\frac{\\partial^2 V}{\\partial S^2} + rS\\frac{\\partial V}{\\partial S} - rV = 0"
+category = "Stochastic Calculus"
 
 [[extra.gallery_items]]
-title = "Backtest Results"
-description = "Cumulative returns of categorical momentum strategy"
-full = "/images/gallery/backtest-results.png"
-thumb = "/images/gallery/thumbs/backtest-results.png"
-category = "Charts"
+title = "Itô's Lemma"
+description = "The chain rule for stochastic calculus"
+katex = "df = \\frac{\\partial f}{\\partial t}dt + \\frac{\\partial f}{\\partial X}dX + \\frac{1}{2}\\frac{\\partial^2 f}{\\partial X^2}(dX)^2"
+category = "Stochastic Calculus"
 
 [[extra.gallery_items]]
-title = "Trading System Architecture"
-description = "Production trading system with categorical components"
-full = "/images/gallery/trading-system.png"
-thumb = "/images/gallery/thumbs/trading-system.png"
-category = "Architecture"
+title = "Geometric Brownian Motion"
+description = "The standard model for stock price dynamics"
+katex = "dS_t = \\mu S_t dt + \\sigma S_t dW_t"
+category = "Stochastic Calculus"
 
 [[extra.gallery_items]]
-title = "Monad Transformer Stack"
-description = "Composing effects for financial computations"
-full = "/images/gallery/monad-stack.png"
-thumb = "/images/gallery/thumbs/monad-stack.png"
-category = "Code"
+title = "Neural Network Layer"
+description = "Forward pass through a neural network layer"
+katex = "h^{(l)} = \\sigma(W^{(l)} h^{(l-1)} + b^{(l)})"
+category = "Machine Learning"
 
 [[extra.gallery_items]]
-title = "Risk Measure Diagram"
-description = "Coherent risk measures as functors"
-full = "/images/gallery/risk-measures.png"
-thumb = "/images/gallery/thumbs/risk-measures.png"
-category = "Diagrams"
+title = "Attention Mechanism"
+description = "Scaled dot-product attention in transformers"
+katex = "\\text{Attention}(Q,K,V) = \\text{softmax}\\left(\\frac{QK^T}{\\sqrt{d_k}}\\right)V"
+category = "Machine Learning"
 
 [[extra.gallery_items]]
-title = "Portfolio Optimization"
-description = "Efficient frontier with categorical constraints"
-full = "/images/gallery/efficient-frontier.png"
-thumb = "/images/gallery/thumbs/efficient-frontier.png"
-category = "Charts"
+title = "Loss Function"
+description = "Cross-entropy loss for classification"
+katex = "\\mathcal{L} = -\\sum_{i} y_i \\log(\\hat{y}_i)"
+category = "Machine Learning"
+
+[[extra.gallery_items]]
+title = "Value at Risk"
+description = "The VaR at confidence level α"
+katex = "\\text{VaR}_\\alpha = -\\inf\\{x : P(X \\leq x) \\geq \\alpha\\}"
+category = "Risk"
+
+[[extra.gallery_items]]
+title = "Expected Shortfall"
+description = "Conditional expectation beyond VaR"
+katex = "\\text{ES}_\\alpha = \\mathbb{E}[X | X \\leq \\text{VaR}_\\alpha]"
+category = "Risk"
+
+[[extra.gallery_items]]
+title = "Portfolio Variance"
+description = "Risk of a portfolio with weight vector w"
+katex = "\\sigma_p^2 = w^T \\Sigma w"
+category = "Risk"
+
 +++
 
-Explore visualizations and diagrams from the handbook. These figures illustrate key concepts in categorical computational finance.
+Explore mathematical formulas and concepts from the handbook. These expressions illustrate key ideas in categorical computational finance.
 
 <div class="alert alert-info mt-4">
-<strong>Note:</strong> Click on any image to view it in full size. High-resolution versions are available for academic use.
+<strong>Note:</strong> All formulas are rendered using KaTeX. Hover over cards to see the interactive effects.
 </div>

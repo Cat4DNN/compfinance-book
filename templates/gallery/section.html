@@ -23,12 +23,30 @@
           {% if section.extra.gallery_items %}
           <div class="gallery-grid">
             <div class="row g-4">
-              {% for image in section.extra.gallery_items %}
+              {% for item in section.extra.gallery_items %}
               <div class="col-md-6 col-lg-4">
-                <div class="gallery-card">
-                  <a href="{{ image.full }}" class="gallery-link" data-lightbox="gallery" data-title="{{ image.title }}">
+                {% if item.katex %}
+                <!-- KaTeX Formula Card -->
+                <div class="katex-gallery-card" data-category="{{ item.category | default(value='') }}">
+                  <div class="katex-display-wrapper">
+                    $$ {{ item.katex }} $$
+                  </div>
+                  <div class="gallery-caption">
+                    <h6>{{ item.title }}</h6>
+                    {% if item.description %}
+                    <p class="small text-muted mb-0">{{ item.description }}</p>
+                    {% endif %}
+                    {% if item.category %}
+                    <span class="badge bg-secondary mt-2">{{ item.category }}</span>
+                    {% endif %}
+                  </div>
+                </div>
+                {% else %}
+                <!-- Image Card (fallback) -->
+                <div class="gallery-card" data-category="{{ item.category | default(value='') }}">
+                  <a href="{{ item.full }}" class="gallery-link" data-lightbox="gallery" data-title="{{ item.title }}">
                     <div class="gallery-image-wrapper">
-                      <img src="{{ image.thumb | default(value=image.full) }}" alt="{{ image.title }}" class="gallery-image">
+                      <img src="{{ item.thumb | default(value=item.full) }}" alt="{{ item.title }}" class="gallery-image">
                       <div class="gallery-overlay">
                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                           <circle cx="11" cy="11" r="8"></circle>
@@ -40,15 +58,16 @@
                     </div>
                   </a>
                   <div class="gallery-caption">
-                    <h6>{{ image.title }}</h6>
-                    {% if image.description %}
-                    <p class="small text-muted mb-0">{{ image.description }}</p>
+                    <h6>{{ item.title }}</h6>
+                    {% if item.description %}
+                    <p class="small text-muted mb-0">{{ item.description }}</p>
                     {% endif %}
-                    {% if image.category %}
-                    <span class="badge bg-secondary mt-2">{{ image.category }}</span>
+                    {% if item.category %}
+                    <span class="badge bg-secondary mt-2">{{ item.category }}</span>
                     {% endif %}
                   </div>
                 </div>
+                {% endif %}
               </div>
               {% endfor %}
             </div>

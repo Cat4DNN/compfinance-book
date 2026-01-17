@@ -11,7 +11,7 @@ youtube_id = "dQw4w9WgXcQ"
 duration = "45 min"
 level = "Beginner"
 chapter = 2
-thumbnail = "/images/videos/category-intro-thumb.jpg"
+katex_thumbnail = "F: \\mathcal{C} \\to \\mathcal{D}"
 resources = [
   { title = "Lecture Slides (PDF)", url = "/resources/slides/category-intro.pdf", type = "PDF" },
   { title = "Jupyter Notebook", url = "https://github.com/example/notebooks/category-intro.ipynb", type = "Code" },

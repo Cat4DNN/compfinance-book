@@ -195,6 +195,122 @@ code {
 }
 
 // ============================================
+// KaTeX Hero Illustration (Homepage)
+// ============================================
+
+.katex-hero-illustration {
+  padding: 1.5rem 0;
+
+  .formula-card {
+    background: linear-gradient(135deg, rgba($fintech-navy, 0.03) 0%, rgba($fintech-blue, 0.05) 100%);
+    border: 1px solid rgba($fintech-blue, 0.15);
+    border-radius: 12px;
+    padding: 1.5rem 1rem;
+    margin: 0.5rem;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      border-color: rgba($fintech-blue, 0.4);
+      box-shadow: 0 8px 25px rgba($fintech-blue, 0.15);
+    }
+
+    &.highlight {
+      background: linear-gradient(135deg, rgba($fintech-blue, 0.08) 0%, rgba($fintech-purple, 0.08) 100%);
+      border-color: rgba($fintech-blue, 0.3);
+    }
+
+    .katex {
+      font-size: 1.1rem;
+    }
+
+    small {
+      font-size: 0.75rem;
+      letter-spacing: 0.5px;
+    }
+  }
+}
+
+.author-credit {
+  font-size: 1rem;
+  color: $gray-600;
+
+  strong {
+    color: $fintech-blue;
+    font-weight: 600;
+  }
+}
+
+// ============================================
+// KaTeX Gallery Cards
+// ============================================
+
+.katex-gallery-card {
+  border-radius: 12px;
+  overflow: hidden;
+  background: $gray-100;
+  border: 1px solid $gray-200;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  }
+
+  .katex-display-wrapper {
+    background: linear-gradient(135deg, $fintech-navy 0%, darken($fintech-navy, 5%) 100%);
+    padding: 2rem 1rem;
+    min-height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .katex {
+      color: $fintech-blue;
+      font-size: 1.3rem;
+    }
+  }
+
+  .gallery-caption {
+    padding: 1rem;
+    background: white;
+
+    h6 {
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+  }
+}
+
+// ============================================
+// KaTeX Video Thumbnails
+// ============================================
+
+.katex-video-thumbnail {
+  background: linear-gradient(135deg, $fintech-navy 0%, darken($fintech-navy, 5%) 100%);
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  position: relative;
+
+  .katex {
+    color: $fintech-blue;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .video-icon {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    color: rgba(255, 255, 255, 0.5);
+  }
+}
+
+// ============================================
 // Card Enhancements
 // ============================================
 
@@ -307,6 +423,44 @@ body.dark {
       transparent 50%,
       rgba($fintech-purple, 0.08) 100%
     );
+  }
+
+  // KaTeX Hero Dark Mode
+  .katex-hero-illustration .formula-card {
+    background: linear-gradient(135deg, rgba($fintech-blue, 0.08) 0%, rgba($fintech-purple, 0.05) 100%);
+    border-color: rgba($fintech-blue, 0.3);
+
+    &.highlight {
+      background: linear-gradient(135deg, rgba($fintech-blue, 0.15) 0%, rgba($fintech-purple, 0.1) 100%);
+      border-color: rgba($fintech-blue, 0.5);
+    }
+
+    &:hover {
+      box-shadow: 0 8px 25px rgba($fintech-blue, 0.25);
+    }
+  }
+
+  .author-credit {
+    color: $gray-400;
+
+    strong {
+      color: $fintech-blue;
+    }
+  }
+
+  // KaTeX Gallery Dark Mode
+  .katex-gallery-card {
+    background: $fintech-card;
+    border-color: lighten($fintech-navy, 10%);
+
+    &:hover {
+      border-color: $fintech-blue;
+      box-shadow: 0 0 30px rgba($fintech-blue, 0.2);
+    }
+
+    .gallery-caption {
+      background: $fintech-card;
+    }
   }
 }
 

@@ -11,7 +11,7 @@ youtube_id = "dQw4w9WgXcQ"
 duration = "1h 30min"
 level = "Advanced"
 chapter = 12
-thumbnail = "/images/videos/live-trading-thumb.jpg"
+katex_thumbnail = "\\alpha_t = \\mathcal{S}(\\mathcal{F}(X_t))"
 resources = [
   { title = "Complete Source Code", url = "https://github.com/example/trading-system", type = "Code" },
   { title = "Architecture Diagram", url = "/resources/diagrams/trading-system.pdf", type = "PDF" },

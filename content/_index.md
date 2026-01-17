@@ -10,6 +10,7 @@ url_button = "Start Reading"
 repo_version = "First Edition"
 repo_license = "Academic & Professional"
 repo_url = "https://github.com/sergeoumbi/compfinance-book"
+author = "Serge Youmbi"
 
 # Menu items
 [[extra.menu.main]]

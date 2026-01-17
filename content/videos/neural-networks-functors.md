@@ -11,7 +11,7 @@ youtube_id = "dQw4w9WgXcQ"
 duration = "55 min"
 level = "Intermediate"
 chapter = 8
-thumbnail = "/images/videos/neural-functors-thumb.jpg"
+katex_thumbnail = "F(g \\circ f) = F(g) \\circ F(f)"
 resources = [
   { title = "Lecture Slides (PDF)", url = "/resources/slides/neural-functors.pdf", type = "PDF" },
   { title = "PyTorch Notebook", url = "https://github.com/example/notebooks/neural-functors.ipynb", type = "Code" }
