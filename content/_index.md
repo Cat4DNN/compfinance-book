@@ -1,14 +1,15 @@
 +++
-title = "Serge Youmbi"
+title = "Handbook of Computational Finance"
+
 
 # The homepage contents
 [extra]
-lead = '<span class="gradient-text">PhD Researcher</span> at the <strong>University of Derby</strong><br><br>Undertaking research at the intersection of <em>Category Theory</em>, <em>Deep Learning</em>, and <em>Computational Finance</em>. Transforming abstract mathematical structures into practical AI systems for real-world financial applications.'
-url = "/about/"
-url_button = "Learn More About Me"
-repo_version = "University of Derby"
-repo_license = "PhD Candidate"
-repo_url = "https://www.derby.ac.uk/"
+lead = '<b>Handbook of Computational Finance:</b> Category-Theoretical & AI-driven Approaches. A rigorous exploration of modern quantitative methods combining abstract mathematics with practical machine learning implementations.'
+url = "/chapters/part-1/introduction/"
+url_button = "Start Reading"
+repo_version = "First Edition"
+repo_license = "Academic & Professional"
+repo_url = "https://github.com/Cat4DNN/compfinance-book"
 author = "Serge Youmbi"
 
 # Menu items
@@ -19,15 +20,15 @@ url = "/about/"
 weight = 10
 
 [[extra.menu.main]]
-name = "Research"
-section = "research"
-url = "/research/"
+name = "Chapters"
+section = "chapters"
+url = "/chapters/"
 weight = 20
 
 [[extra.menu.main]]
-name = "Publications"
-section = "publications"
-url = "/publications/"
+name = "Videos"
+section = "videos"
+url = "/videos/"
 weight = 30
 
 [[extra.menu.main]]
@@ -37,40 +38,39 @@ url = "/gallery/"
 weight = 40
 
 [[extra.menu.main]]
-name = "Blog"
-section = "blog"
-url = "/blog/"
+name = "Author"
+section = "author"
+url = "/author/"
 weight = 50
 
 [[extra.menu.main]]
-name = "Contact"
-section = "contact"
-url = "/contact/"
+name = "Resources"
+section = "resources"
+url = "/resources/"
 weight = 60
 
-# Research Highlights
 [[extra.list]]
-title = "Category Theory & AI"
-content = 'Applying categorical abstractions—functors, natural transformations, and monads—to design principled deep learning architectures with formal guarantees and compositional properties.'
+title = "Category Theory Foundations"
+content = 'Master the mathematical structures underlying modern finance: functors, natural transformations, and monads applied to derivative pricing and risk management.'
 
 [[extra.list]]
-title = "Multi-Agent AI Systems"
-content = 'Developing LLM-powered multi-agent frameworks for financial portfolio management, where specialised agents collaborate through systematic deliberation to optimise trading strategies.'
+title = "AI-Driven Trading Strategies"
+content = 'Implement cutting-edge machine learning models for alpha generation, including transformers, reinforcement learning, and neural differential equations.'
 
 [[extra.list]]
-title = "Algebraic Effects in Finance"
-content = 'Leveraging algebraic effects and delimited continuations for type-safe, composable financial systems—enabling speculative execution, transactional rollback, and formal reasoning.'
+title = "Mathematical Rigor"
+content = 'Every concept backed by formal proofs and type-safe implementations. From measure theory to stochastic calculus with categorical semantics.'
 
 [[extra.list]]
-title = "Mathematical Foundations"
-content = 'Extending Milner&apos;s Bigraphs to Trigraphs, exploring novel categorical structures for modelling complex systems with spatial, temporal, and computational dimensions.'
+title = "Executable Examples"
+content = 'Full code implementations in Python, Haskell, and Julia. All models can be run directly from the companion repository.'
 
 [[extra.list]]
-title = "Supply Chain Intelligence"
-content = 'Applying multi-LLM orchestration patterns to supply chain optimisation, dynamically coordinating AI models based on task complexity, urgency, and precision requirements.'
+title = "Risk & Portfolio Theory"
+content = 'Modern portfolio optimization through the lens of category theory. Coherent risk measures, convex optimization, and functorial approaches to hedging.'
 
 [[extra.list]]
-title = "Quantitative Finance"
-content = 'Bridging theory and practice—from stochastic calculus to neural differential equations—with production-ready implementations for option pricing and risk management.'
+title = "Production-Ready Code"
+content = 'Bridge theory and practice with deployable trading systems. Real-time data pipelines, backtesting frameworks, and performance optimization.'
 
 +++

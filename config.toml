@@ -1,7 +1,7 @@
 # The URL the site will be built for
-base_url = "https://cat4dnn.github.io/sergeyoumbi"
-title = "Serge Youmbi"
-description = "PhD Researcher at University of Derby - Exploring the intersection of Category Theory, Deep Learning, and Computational Finance"
+base_url = "https://cat4dnn.github.io/compfinance-book"
+title = "Handbook of Computational Finance"
+description = "Category-Theoretical & AI-driven Approaches to modern computational finance - combining mathematical rigor with practical applications."
 
 # The default language; used in feeds and search index
 default_language = "en"
@@ -57,7 +57,7 @@ theme_color = "#6366f1"
 
 # More about site's title
 title_separator = "|"
-title_addition = "Category Theory | Deep Learning | Finance"
+title_addition = "Category-Theoretical & AI-driven Approaches"
 
 # Set date format in blog publish metadata
 timeformat = "%B %d, %Y"
